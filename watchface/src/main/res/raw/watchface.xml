@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFace clipShape="CIRCLE" width="1000" height="1000">
+<Metadata key="CLOCK_TYPE" value="ANALOG"/>
+<Metadata key="STEP_GOAL" value="10000"/>
+<UserConfigurations>
+<ListConfiguration id="theme" displayName="theme_label" defaultValue="sage">
+<ListOption id="sage" displayName="sage"/>
+<ListOption id="blue" displayName="blue"/>
+<ListOption id="gold" displayName="gold"/>
+<ListOption id="emerald" displayName="emerald"/>
+<ListOption id="silver" displayName="silver"/>
+</ListConfiguration>
+<ListConfiguration id="ornament" displayName="ornament_label" defaultValue="balanced">
+<ListOption id="minimal" displayName="minimal"/>
+<ListOption id="balanced" displayName="balanced"/>
+<ListOption id="ornate" displayName="ornate"/>
+<ListOption id="none" displayName="none"/>
+</ListConfiguration>
+<ListConfiguration id="dial" displayName="dial_label" defaultValue="full">
+<ListOption id="full" displayName="full"/>
+<ListOption id="cardinal" displayName="cardinal"/>
+<ListOption id="markers" displayName="markers"/>
+</ListConfiguration>
+<ListConfiguration id="hands" displayName="hands_label" defaultValue="match">
+<ListOption id="match" displayName="match_theme"/>
+<ListOption id="sage" displayName="sage"/>
+<ListOption id="blue" displayName="blue"/>
+<ListOption id="gold" displayName="gold"/>
+<ListOption id="emerald" displayName="emerald"/>
+<ListOption id="silver" displayName="silver"/>
+</ListConfiguration>
+<ColorConfiguration id="background" displayName="background_label" defaultValue="black">
+<ColorOption id="black" displayName="background_black" colors="#ff000000"/>
+<ColorOption id="navy" displayName="background_navy" colors="#ff070F19"/>
+<ColorOption id="teal" displayName="background_teal" colors="#ff061713"/>
+<ColorOption id="warm" displayName="background_warm" colors="#ff17110B"/>
+<ColorOption id="graphite" displayName="background_graphite" colors="#ff15171B"/>
+</ColorConfiguration>
+</UserConfigurations>
+<Scene backgroundColor="#ff000000">
+<PartDraw x="0" y="0" width="1000" height="1000">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<Rectangle x="0" y="0" width="1000" height="1000">
+<Fill color="[CONFIGURATION.background.0]"/>
+</Rectangle>
+</PartDraw>
+<Group name="active" x="0" y="0" width="1000" height="1000">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<Condition>
+<Expressions>
+<Expression name="theme_sage">[CONFIGURATION.theme] == "sage"</Expression>
+<Expression name="theme_blue">[CONFIGURATION.theme] == "blue"</Expression>
+<Expression name="theme_gold">[CONFIGURATION.theme] == "gold"</Expression>
+<Expression name="theme_emerald">[CONFIGURATION.theme] == "emerald"</Expression>
+<Expression name="theme_silver">[CONFIGURATION.theme] == "silver"</Expression>
+</Expressions>
+<Compare expression="theme_sage">
+<Group name="theme_group_sage" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="ornament_minimal">[CONFIGURATION.ornament] == "minimal"</Expression>
+<Expression name="ornament_balanced">[CONFIGURATION.ornament] == "balanced"</Expression>
+<Expression name="ornament_ornate">[CONFIGURATION.ornament] == "ornate"</Expression>
+<Expression name="ornament_none">[CONFIGURATION.ornament] == "none"</Expression>
+</Expressions>
+<Compare expression="ornament_minimal">
+<Group name="ornament_group_minimal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_0_orn_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_balanced">
+<Group name="ornament_group_balanced" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_0_orn_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_ornate">
+<Group name="ornament_group_ornate" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_0_orn_2"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_none">
+<Group name="ornament_group_none" x="0" y="0" width="1000" height="1000"/>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_2"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+<PartImage x="171" y="391" width="228" height="228">
+<Image resource="uc_0_ring"/>
+</PartImage>
+<PartImage x="601" y="391" width="228" height="228">
+<Image resource="uc_0_ring"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="theme_blue">
+<Group name="theme_group_blue" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="ornament_minimal">[CONFIGURATION.ornament] == "minimal"</Expression>
+<Expression name="ornament_balanced">[CONFIGURATION.ornament] == "balanced"</Expression>
+<Expression name="ornament_ornate">[CONFIGURATION.ornament] == "ornate"</Expression>
+<Expression name="ornament_none">[CONFIGURATION.ornament] == "none"</Expression>
+</Expressions>
+<Compare expression="ornament_minimal">
+<Group name="ornament_group_minimal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_1_orn_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_balanced">
+<Group name="ornament_group_balanced" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_1_orn_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_ornate">
+<Group name="ornament_group_ornate" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_1_orn_2"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_none">
+<Group name="ornament_group_none" x="0" y="0" width="1000" height="1000"/>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_2"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+<PartImage x="171" y="391" width="228" height="228">
+<Image resource="uc_1_ring"/>
+</PartImage>
+<PartImage x="601" y="391" width="228" height="228">
+<Image resource="uc_1_ring"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="theme_gold">
+<Group name="theme_group_gold" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="ornament_minimal">[CONFIGURATION.ornament] == "minimal"</Expression>
+<Expression name="ornament_balanced">[CONFIGURATION.ornament] == "balanced"</Expression>
+<Expression name="ornament_ornate">[CONFIGURATION.ornament] == "ornate"</Expression>
+<Expression name="ornament_none">[CONFIGURATION.ornament] == "none"</Expression>
+</Expressions>
+<Compare expression="ornament_minimal">
+<Group name="ornament_group_minimal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_2_orn_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_balanced">
+<Group name="ornament_group_balanced" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_2_orn_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_ornate">
+<Group name="ornament_group_ornate" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_2_orn_2"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_none">
+<Group name="ornament_group_none" x="0" y="0" width="1000" height="1000"/>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_2"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+<PartImage x="171" y="391" width="228" height="228">
+<Image resource="uc_2_ring"/>
+</PartImage>
+<PartImage x="601" y="391" width="228" height="228">
+<Image resource="uc_2_ring"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="theme_emerald">
+<Group name="theme_group_emerald" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="ornament_minimal">[CONFIGURATION.ornament] == "minimal"</Expression>
+<Expression name="ornament_balanced">[CONFIGURATION.ornament] == "balanced"</Expression>
+<Expression name="ornament_ornate">[CONFIGURATION.ornament] == "ornate"</Expression>
+<Expression name="ornament_none">[CONFIGURATION.ornament] == "none"</Expression>
+</Expressions>
+<Compare expression="ornament_minimal">
+<Group name="ornament_group_minimal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_3_orn_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_balanced">
+<Group name="ornament_group_balanced" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_3_orn_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_ornate">
+<Group name="ornament_group_ornate" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_3_orn_2"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_none">
+<Group name="ornament_group_none" x="0" y="0" width="1000" height="1000"/>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_2"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+<PartImage x="171" y="391" width="228" height="228">
+<Image resource="uc_3_ring"/>
+</PartImage>
+<PartImage x="601" y="391" width="228" height="228">
+<Image resource="uc_3_ring"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="theme_silver">
+<Group name="theme_group_silver" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="ornament_minimal">[CONFIGURATION.ornament] == "minimal"</Expression>
+<Expression name="ornament_balanced">[CONFIGURATION.ornament] == "balanced"</Expression>
+<Expression name="ornament_ornate">[CONFIGURATION.ornament] == "ornate"</Expression>
+<Expression name="ornament_none">[CONFIGURATION.ornament] == "none"</Expression>
+</Expressions>
+<Compare expression="ornament_minimal">
+<Group name="ornament_group_minimal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_4_orn_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_balanced">
+<Group name="ornament_group_balanced" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_4_orn_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_ornate">
+<Group name="ornament_group_ornate" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000" alpha="255">
+<Image resource="visible_4_orn_2"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="ornament_none">
+<Group name="ornament_group_none" x="0" y="0" width="1000" height="1000"/>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_0"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_1"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_2"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+<PartImage x="171" y="391" width="228" height="228">
+<Image resource="uc_4_ring"/>
+</PartImage>
+<PartImage x="601" y="391" width="228" height="228">
+<Image resource="uc_4_ring"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+
+
+<Condition>
+<Expressions>
+<Expression name="moon0">[MOON_PHASE_POSITION] &lt; 1</Expression>
+<Expression name="moon1">[MOON_PHASE_POSITION] &lt; 2</Expression>
+<Expression name="moon2">[MOON_PHASE_POSITION] &lt; 3</Expression>
+<Expression name="moon3">[MOON_PHASE_POSITION] &lt; 4</Expression>
+<Expression name="moon4">[MOON_PHASE_POSITION] &lt; 5</Expression>
+<Expression name="moon5">[MOON_PHASE_POSITION] &lt; 6</Expression>
+<Expression name="moon6">[MOON_PHASE_POSITION] &lt; 7</Expression>
+<Expression name="moon7">[MOON_PHASE_POSITION] &lt; 8</Expression>
+<Expression name="moon8">[MOON_PHASE_POSITION] &lt; 9</Expression>
+<Expression name="moon9">[MOON_PHASE_POSITION] &lt; 10</Expression>
+<Expression name="moon10">[MOON_PHASE_POSITION] &lt; 11</Expression>
+<Expression name="moon11">[MOON_PHASE_POSITION] &lt; 12</Expression>
+<Expression name="moon12">[MOON_PHASE_POSITION] &lt; 13</Expression>
+<Expression name="moon13">[MOON_PHASE_POSITION] &lt; 14</Expression>
+<Expression name="moon14">[MOON_PHASE_POSITION] &lt; 15</Expression>
+<Expression name="moon15">[MOON_PHASE_POSITION] &lt; 16</Expression>
+<Expression name="moon16">[MOON_PHASE_POSITION] &lt; 17</Expression>
+<Expression name="moon17">[MOON_PHASE_POSITION] &lt; 18</Expression>
+<Expression name="moon18">[MOON_PHASE_POSITION] &lt; 19</Expression>
+<Expression name="moon19">[MOON_PHASE_POSITION] &lt; 20</Expression>
+<Expression name="moon20">[MOON_PHASE_POSITION] &lt; 21</Expression>
+<Expression name="moon21">[MOON_PHASE_POSITION] &lt; 22</Expression>
+<Expression name="moon22">[MOON_PHASE_POSITION] &lt; 23</Expression>
+<Expression name="moon23">[MOON_PHASE_POSITION] &lt; 24</Expression>
+<Expression name="moon24">[MOON_PHASE_POSITION] &lt; 25</Expression>
+<Expression name="moon25">[MOON_PHASE_POSITION] &lt; 26</Expression>
+<Expression name="moon26">[MOON_PHASE_POSITION] &lt; 27</Expression>
+<Expression name="moon27">[MOON_PHASE_POSITION] &lt; 28</Expression>
+</Expressions>
+<Compare expression="moon0">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_00"/>
+</PartImage>
+</Compare>
+<Compare expression="moon1">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_01"/>
+</PartImage>
+</Compare>
+<Compare expression="moon2">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_02"/>
+</PartImage>
+</Compare>
+<Compare expression="moon3">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_03"/>
+</PartImage>
+</Compare>
+<Compare expression="moon4">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_04"/>
+</PartImage>
+</Compare>
+<Compare expression="moon5">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_05"/>
+</PartImage>
+</Compare>
+<Compare expression="moon6">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_06"/>
+</PartImage>
+</Compare>
+<Compare expression="moon7">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_07"/>
+</PartImage>
+</Compare>
+<Compare expression="moon8">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_08"/>
+</PartImage>
+</Compare>
+<Compare expression="moon9">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_09"/>
+</PartImage>
+</Compare>
+<Compare expression="moon10">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_10"/>
+</PartImage>
+</Compare>
+<Compare expression="moon11">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_11"/>
+</PartImage>
+</Compare>
+<Compare expression="moon12">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_12"/>
+</PartImage>
+</Compare>
+<Compare expression="moon13">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_13"/>
+</PartImage>
+</Compare>
+<Compare expression="moon14">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_14"/>
+</PartImage>
+</Compare>
+<Compare expression="moon15">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_15"/>
+</PartImage>
+</Compare>
+<Compare expression="moon16">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_16"/>
+</PartImage>
+</Compare>
+<Compare expression="moon17">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_17"/>
+</PartImage>
+</Compare>
+<Compare expression="moon18">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_18"/>
+</PartImage>
+</Compare>
+<Compare expression="moon19">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_19"/>
+</PartImage>
+</Compare>
+<Compare expression="moon20">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_20"/>
+</PartImage>
+</Compare>
+<Compare expression="moon21">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_21"/>
+</PartImage>
+</Compare>
+<Compare expression="moon22">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_22"/>
+</PartImage>
+</Compare>
+<Compare expression="moon23">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_23"/>
+</PartImage>
+</Compare>
+<Compare expression="moon24">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_24"/>
+</PartImage>
+</Compare>
+<Compare expression="moon25">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_25"/>
+</PartImage>
+</Compare>
+<Compare expression="moon26">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_26"/>
+</PartImage>
+</Compare>
+<Compare expression="moon27">
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_27"/>
+</PartImage>
+</Compare>
+<Default>
+<PartImage x="392" y="122" width="216" height="216" alpha="255">
+<Image resource="refined_moon_28"/>
+</PartImage>
+</Default>
+</Condition>
+
+</Group>
+<ComplicationSlot slotId="0" displayName="left_slot" x="171" y="391" width="228" height="228" supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY" isCustomizable="TRUE">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<BoundingOval x="0" y="0" width="228" height="228"/>
+<DefaultProviderPolicy defaultSystemProvider="WATCH_BATTERY" defaultSystemProviderType="RANGED_VALUE"/>
+<Complication type="SHORT_TEXT">
+<PartImage x="82" y="28" width="65" height="65">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<PartText x="10" y="110" width="207" height="82">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="67" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+<PartText x="17" y="184" width="195" height="42">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="38" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+</Complication>
+<Complication type="RANGED_VALUE">
+<PartImage x="82" y="28" width="65" height="65">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<PartText x="8" y="110" width="212" height="82">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="67" color="#ffFFF0D8">
+<Template>%s<Parameter expression="([COMPLICATION.RANGED_VALUE_MIN] == 0 &amp;&amp; [COMPLICATION.RANGED_VALUE_MAX] == 100 &amp;&amp; [COMPLICATION.TEXT] == numberFormat(&quot;0&quot;, [COMPLICATION.RANGED_VALUE_VALUE])) ? numberFormat(&quot;0'%'&quot;, [COMPLICATION.RANGED_VALUE_VALUE]) : (textLength([COMPLICATION.TEXT]) &gt; 0 ? [COMPLICATION.TEXT] : numberFormat(&quot;0&quot;, [COMPLICATION.RANGED_VALUE_VALUE]))"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+</Complication>
+<Complication type="EMPTY"/>
+<Complication type="MONOCHROMATIC_IMAGE">
+<PartImage x="64" y="64" width="100" height="100">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+</Complication>
+<Complication type="SMALL_IMAGE">
+<PartImage x="64" y="64" width="100" height="100">
+<Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+</PartImage>
+</Complication>
+</ComplicationSlot>
+<ComplicationSlot slotId="1" displayName="right_slot" x="601" y="391" width="228" height="228" supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY" isCustomizable="TRUE">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<BoundingOval x="0" y="0" width="228" height="228"/>
+<DefaultProviderPolicy defaultSystemProvider="DATE" defaultSystemProviderType="SHORT_TEXT"/>
+<Complication type="SHORT_TEXT">
+<PartImage x="85" y="27" width="60" height="56">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<Condition>
+<Expressions>
+<Expression name="calendar_single_line"><![CDATA[[COMPLICATION.TITLE] == "" && (subText([COMPLICATION.TEXT], clamp(textLength([COMPLICATION.TEXT]) - textLength([MONTH_S]), 0, textLength([COMPLICATION.TEXT])), textLength([COMPLICATION.TEXT])) == [MONTH_S] || subText([COMPLICATION.TEXT], 0, clamp(textLength([MONTH_S]), 0, textLength([COMPLICATION.TEXT]))) == [MONTH_S])]]></Expression>
+</Expressions>
+<Compare expression="calendar_single_line">
+<PartText x="9" y="141" width="210" height="69">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="58" color="#ffFFF0D8">
+<Template>%d<Parameter expression="[DAY]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+<PartText x="9" y="97" width="210" height="51">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="44" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[MONTH_S]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+</Compare>
+<Default>
+<PartText x="9" y="141" width="210" height="69">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="58" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+<PartText x="9" y="97" width="210" height="51">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="44" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+</Default>
+</Condition>
+</Complication>
+<Complication type="RANGED_VALUE">
+<PartImage x="85" y="27" width="60" height="56">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<PartText x="9" y="141" width="210" height="69">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="58" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+<PartText x="9" y="97" width="210" height="51">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="44" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
+</Template>
+</Font>
+</Text>
+</PartText>
+</Complication>
+<Complication type="EMPTY"/>
+<Complication type="MONOCHROMATIC_IMAGE">
+<PartImage x="64" y="64" width="100" height="100">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+</Complication>
+<Complication type="SMALL_IMAGE">
+<PartImage x="64" y="64" width="100" height="100">
+<Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+</PartImage>
+</Complication>
+</ComplicationSlot>
+<ComplicationSlot slotId="2" displayName="steps_slot" x="330" y="606" width="340" height="172" supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY" isCustomizable="TRUE">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<BoundingBox x="0" y="0" width="340" height="172"/>
+<DefaultProviderPolicy defaultSystemProvider="STEP_COUNT" defaultSystemProviderType="SHORT_TEXT"/>
+<Complication type="SHORT_TEXT">
+<PartImage x="136" y="0" width="68" height="68">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<PartText x="0" y="90" width="340" height="82">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="73" color="#ffFFF0D8">
+<Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+</Font>
+</Text>
+</PartText>
+</Complication>
+<Complication type="RANGED_VALUE">
+<PartImage x="136" y="0" width="68" height="68">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+<PartText x="0" y="90" width="340" height="82">
+<Text align="CENTER" ellipsis="TRUE">
+<Font family="functional_medium" size="73" color="#ffFFF0D8">
+<Template>%s<Parameter expression="textLength([COMPLICATION.TEXT]) &gt; 0 ? [COMPLICATION.TEXT] : numberFormat(&quot;#,##0&quot;, [COMPLICATION.RANGED_VALUE_VALUE])"/></Template>
+</Font>
+</Text>
+</PartText>
+</Complication>
+<Complication type="MONOCHROMATIC_IMAGE">
+<PartImage x="120" y="36" width="100" height="100">
+<Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+</PartImage>
+</Complication>
+<Complication type="SMALL_IMAGE">
+<PartImage x="120" y="36" width="100" height="100">
+<Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+</PartImage>
+</Complication>
+<Complication type="EMPTY"/>
+</ComplicationSlot>
+<Group name="active_foreground" x="0" y="0" width="1000" height="1000">
+<Variant mode="AMBIENT" target="alpha" value="0"/>
+<Condition>
+<Expressions>
+<Expression name="theme_sage">([CONFIGURATION.hands] == "sage") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "sage")</Expression>
+<Expression name="theme_blue">([CONFIGURATION.hands] == "blue") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "blue")</Expression>
+<Expression name="theme_gold">([CONFIGURATION.hands] == "gold") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "gold")</Expression>
+<Expression name="theme_emerald">([CONFIGURATION.hands] == "emerald") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "emerald")</Expression>
+<Expression name="theme_silver">([CONFIGURATION.hands] == "silver") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "silver")</Expression>
+</Expressions>
+<Compare expression="theme_sage">
+<Group name="theme_group_sage" x="0" y="0" width="1000" height="1000">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_0_hour" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_0_minute" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+<SecondHand resource="uc_0_second" x="492" y="140" width="16" height="395" pivotX="0.5" pivotY="0.9113924050632911"/>
+</AnalogClock>
+</Group>
+</Compare>
+<Compare expression="theme_blue">
+<Group name="theme_group_blue" x="0" y="0" width="1000" height="1000">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_1_hour" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_1_minute" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+<SecondHand resource="uc_1_second" x="492" y="140" width="16" height="395" pivotX="0.5" pivotY="0.9113924050632911"/>
+</AnalogClock>
+</Group>
+</Compare>
+<Compare expression="theme_gold">
+<Group name="theme_group_gold" x="0" y="0" width="1000" height="1000">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_2_hour" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_2_minute" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+<SecondHand resource="uc_2_second" x="492" y="140" width="16" height="395" pivotX="0.5" pivotY="0.9113924050632911"/>
+</AnalogClock>
+</Group>
+</Compare>
+<Compare expression="theme_emerald">
+<Group name="theme_group_emerald" x="0" y="0" width="1000" height="1000">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_3_hour" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_3_minute" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+<SecondHand resource="uc_3_second" x="492" y="140" width="16" height="395" pivotX="0.5" pivotY="0.9113924050632911"/>
+</AnalogClock>
+</Group>
+</Compare>
+<Compare expression="theme_silver">
+<Group name="theme_group_silver" x="0" y="0" width="1000" height="1000">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_4_hour" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_4_minute" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+<SecondHand resource="uc_4_second" x="492" y="140" width="16" height="395" pivotX="0.5" pivotY="0.9113924050632911"/>
+</AnalogClock>
+</Group>
+</Compare>
+</Condition>
+<PartDraw x="427" y="153" width="147" height="147">
+<Launch target="com.samsung.android.watch.weather"/>
+<Rectangle x="0" y="0" width="133" height="133">
+<Fill color="#01000000"/>
+</Rectangle>
+</PartDraw>
+
+
+<Condition>
+<Expressions>
+<Expression name="hub_sage">([CONFIGURATION.hands] == "sage") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "sage")</Expression>
+<Expression name="hub_blue">([CONFIGURATION.hands] == "blue") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "blue")</Expression>
+<Expression name="hub_gold">([CONFIGURATION.hands] == "gold") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "gold")</Expression>
+<Expression name="hub_emerald">([CONFIGURATION.hands] == "emerald") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "emerald")</Expression>
+<Expression name="hub_silver">([CONFIGURATION.hands] == "silver") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "silver")</Expression>
+</Expressions>
+<Compare expression="hub_sage">
+<PartImage x="477" y="477" width="46" height="46">
+<Image resource="uc_0_hub"/>
+</PartImage>
+</Compare>
+<Compare expression="hub_blue">
+<PartImage x="477" y="477" width="46" height="46">
+<Image resource="uc_1_hub"/>
+</PartImage>
+</Compare>
+<Compare expression="hub_gold">
+<PartImage x="477" y="477" width="46" height="46">
+<Image resource="uc_2_hub"/>
+</PartImage>
+</Compare>
+<Compare expression="hub_emerald">
+<PartImage x="477" y="477" width="46" height="46">
+<Image resource="uc_3_hub"/>
+</PartImage>
+</Compare>
+<Compare expression="hub_silver">
+<PartImage x="477" y="477" width="46" height="46">
+<Image resource="uc_4_hub"/>
+</PartImage>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="minute_dh0">([MINUTE] % 4) == 0</Expression>
+<Expression name="minute_dh1">([MINUTE] % 4) == 1</Expression>
+<Expression name="minute_dh2">([MINUTE] % 4) == 2</Expression>
+</Expressions>
+<Compare expression="minute_dh0">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_0_precision"/>
+</PartImage>
+</Compare>
+<Compare expression="minute_dh1">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_1_precision"/>
+</PartImage>
+</Compare>
+<Compare expression="minute_dh2">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_2_precision"/>
+</PartImage>
+</Compare>
+<Default>
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_3_precision"/>
+</PartImage>
+</Default>
+</Condition>
+</Group>
+<Group name="ambient" x="0" y="0" width="1000" height="1000" alpha="0">
+
+
+<Variant mode="AMBIENT" target="alpha" value="255"/>
+<Condition>
+<Expressions>
+<Expression name="theme_sage">([CONFIGURATION.hands] == "sage") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "sage")</Expression>
+<Expression name="theme_blue">([CONFIGURATION.hands] == "blue") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "blue")</Expression>
+<Expression name="theme_gold">([CONFIGURATION.hands] == "gold") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "gold")</Expression>
+<Expression name="theme_emerald">([CONFIGURATION.hands] == "emerald") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "emerald")</Expression>
+<Expression name="theme_silver">([CONFIGURATION.hands] == "silver") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "silver")</Expression>
+</Expressions>
+<Compare expression="theme_sage">
+<Group name="theme_group_sage" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_0_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_1_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_0_dial_2_aod"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+</Group>
+</Compare>
+<Compare expression="theme_blue">
+<Group name="theme_group_blue" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_0_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_1_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_1_dial_2_aod"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+</Group>
+</Compare>
+<Compare expression="theme_gold">
+<Group name="theme_group_gold" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_0_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_1_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_2_dial_2_aod"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+</Group>
+</Compare>
+<Compare expression="theme_emerald">
+<Group name="theme_group_emerald" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_0_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_1_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_3_dial_2_aod"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+</Group>
+</Compare>
+<Compare expression="theme_silver">
+<Group name="theme_group_silver" x="0" y="0" width="1000" height="1000">
+<Condition>
+<Expressions>
+<Expression name="dial_full">[CONFIGURATION.dial] == "full"</Expression>
+<Expression name="dial_cardinal">[CONFIGURATION.dial] == "cardinal"</Expression>
+<Expression name="dial_markers">[CONFIGURATION.dial] == "markers"</Expression>
+</Expressions>
+<Compare expression="dial_full">
+<Group name="dial_group_full" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_0_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_cardinal">
+<Group name="dial_group_cardinal" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_1_aod"/>
+</PartImage>
+</Group>
+</Compare>
+<Compare expression="dial_markers">
+<Group name="dial_group_markers" x="0" y="0" width="1000" height="1000">
+<PartImage x="0" y="0" width="1000" height="1000">
+<Image resource="refined_4_dial_2_aod"/>
+</PartImage>
+</Group>
+</Compare>
+</Condition>
+</Group>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="ambient_clock_sage">([CONFIGURATION.hands] == "sage") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "sage")</Expression>
+<Expression name="ambient_clock_blue">([CONFIGURATION.hands] == "blue") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "blue")</Expression>
+<Expression name="ambient_clock_gold">([CONFIGURATION.hands] == "gold") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "gold")</Expression>
+<Expression name="ambient_clock_emerald">([CONFIGURATION.hands] == "emerald") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "emerald")</Expression>
+<Expression name="ambient_clock_silver">([CONFIGURATION.hands] == "silver") || ([CONFIGURATION.hands] == "match" &amp;&amp; [CONFIGURATION.theme] == "silver")</Expression>
+</Expressions>
+<Compare expression="ambient_clock_sage">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_0_hour_aod" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_0_minute_aod" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+</AnalogClock>
+</Compare>
+<Compare expression="ambient_clock_blue">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_1_hour_aod" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_1_minute_aod" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+</AnalogClock>
+</Compare>
+<Compare expression="ambient_clock_gold">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_2_hour_aod" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_2_minute_aod" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+</AnalogClock>
+</Compare>
+<Compare expression="ambient_clock_emerald">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_3_hour_aod" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_3_minute_aod" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+</AnalogClock>
+</Compare>
+<Compare expression="ambient_clock_silver">
+<AnalogClock x="0" y="0" width="1000" height="1000">
+<HourHand resource="refined_4_hour_aod" x="480" y="250" width="40" height="280" pivotX="0.5" pivotY="0.8928571428571429"/>
+<MinuteHand resource="refined_4_minute_aod" x="483" y="150" width="34" height="380" pivotX="0.5" pivotY="0.9210526315789473"/>
+</AnalogClock>
+</Compare>
+</Condition>
+<Condition>
+<Expressions>
+<Expression name="minute_dh0">([MINUTE] % 4) == 0</Expression>
+<Expression name="minute_dh1">([MINUTE] % 4) == 1</Expression>
+<Expression name="minute_dh2">([MINUTE] % 4) == 2</Expression>
+</Expressions>
+<Compare expression="minute_dh0">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_0_precision"/>
+</PartImage>
+</Compare>
+<Compare expression="minute_dh1">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_1_precision"/>
+</PartImage>
+</Compare>
+<Compare expression="minute_dh2">
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_2_precision"/>
+</PartImage>
+</Compare>
+<Default>
+<PartImage x="300" y="335" width="400" height="80">
+<Image resource="uc_dhikr_3_precision"/>
+</PartImage>
+</Default>
+</Condition>
+</Group>
+</Scene>
+</WatchFace>

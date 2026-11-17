@@ -1,0 +1,30 @@
+<resources>
+    <string name="watch_face_name">Minimal</string>
+    <string name="greeting">Hello, world!</string>
+    <string name="theme_label">Dial colors</string>
+    <string name="hands_label">Hand colors</string>
+    <string name="background_label">Background color</string>
+    <string name="match_theme">Match dial colors</string>
+    <string name="ornament_label">Ornament</string>
+    <string name="dial_label">Hour markers</string>
+    <string name="sage">Sage</string>
+    <string name="blue">Blue</string>
+    <string name="gold">Gold</string>
+    <string name="emerald">Emerald</string>
+    <string name="silver">Silver</string>
+    <string name="minimal">Minimal</string>
+    <string name="balanced">Balanced</string>
+    <string name="ornate">Ornate</string>
+    <string name="none">None</string>
+    <string name="full">All numerals</string>
+    <string name="cardinal">Quarter numerals</string>
+    <string name="markers">Markers only</string>
+    <string name="left_slot">Left complication</string>
+    <string name="right_slot">Right complication</string>
+    <string name="steps_slot">Lower complication</string>
+    <string name="background_black">Black</string>
+    <string name="background_navy">Midnight blue</string>
+    <string name="background_teal">Deep teal</string>
+    <string name="background_warm">Warm black</string>
+    <string name="background_graphite">Graphite</string>
+</resources>
