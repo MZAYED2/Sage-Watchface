@@ -95,7 +95,7 @@ jobs:
             echo "::error::Built APK is abnormally small ($APK_SIZE bytes), assets or resources may have been stripped!"
             exit 1
           fi
-          unzip -l "release/$APK" | grep -F "res/raw/watchface.xml"
+          unzip -l "release/$APK" | grep -F "resources.arsc"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs \
             "release/$APK" | tee release/signing-certificate.txt
           (cd release && sha256sum "$APK" > "$APK.sha256")
