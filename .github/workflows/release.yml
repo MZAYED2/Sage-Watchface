@@ -33,7 +33,7 @@ jobs:
         run: |
           set -euo pipefail
           SDK_MANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
-          "$SDK_MANAGER" "platforms;android-37" "build-tools;36.0.0"
+          "$SDK_MANAGER" "platforms;android-36" "build-tools;36.0.0"
 
       - name: Set release version
         id: version

@@ -5,13 +5,13 @@ plugins {
 android {
     namespace = "com.example.minimal"
     compileSdk {
-        version = release(37)
+        version = release(36)
     }
 
     defaultConfig {
         applicationId = "com.example.minimal"
         minSdk = 36
-        targetSdk = 37
+        targetSdk = 36
         versionCode = providers.gradleProperty("releaseVersionCode").orElse("1").get().toInt()
         versionName = providers.gradleProperty("releaseVersionName").orElse("1.0").get()
 
