@@ -23,3 +23,6 @@ local.properties
 .signing/
 .codex-tools/
 .gradle-local/
+.idea/
+/*.png
+/werd/

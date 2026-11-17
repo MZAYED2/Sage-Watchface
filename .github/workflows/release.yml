@@ -89,6 +89,13 @@ jobs:
           mkdir -p release
           APK="Sage-Nocturne-$RELEASE_TAG.apk"
           cp watchface/build/outputs/apk/release/watchface-release.apk "release/$APK"
+          APK_SIZE=$(stat -c%s "release/$APK")
+          echo "APK size: $APK_SIZE bytes"
+          if [ "$APK_SIZE" -lt 5000000 ]; then
+            echo "::error::Built APK is abnormally small ($APK_SIZE bytes), assets or resources may have been stripped!"
+            exit 1
+          fi
+          unzip -l "release/$APK" | grep -F "res/raw/watchface.xml"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs \
             "release/$APK" | tee release/signing-certificate.txt
           (cd release && sha256sum "$APK" > "$APK.sha256")
